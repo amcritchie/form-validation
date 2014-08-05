@@ -5,7 +5,6 @@ class TaskListsController < ApplicationController
   end
 
   def new
-    p "="*100
     @new_task = TaskList.new
   end
 
