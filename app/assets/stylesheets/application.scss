@@ -4,7 +4,7 @@
  */
 
 .container {
-  width: 960px;
+  width: 980px;
   margin: 0 auto;
   padding: 1em;
   box-sizing: border-box;
@@ -17,6 +17,34 @@
     clear: both;
     height: 0;
   }
+}
+
+.one_half {
+  width: 460px;
+}
+
+.one_third {
+  width: 300px;
+}
+
+.two_third {
+  width: 620px;
+}
+
+.one_fourth {
+  width: 220px;
+}
+
+.one_eighth {
+  width: 100px;
+}
+
+.three_fourth {
+  width: 700px;
+}
+
+.full_column {
+  width: 940px;
 }
 
 header {

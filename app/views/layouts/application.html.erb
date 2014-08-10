@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rails Practice</title>
+  <title>Rails for Days!</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'shadow.png' %>
 </head>
 <body>
 <header>
@@ -22,8 +23,11 @@
 </header>
 <main>
   <div class="container">
-    <% if flash[:notice] %>
-        <p><%= flash[:notice] %></p>
+    <% if flash[:error] %>
+        <div style="color: red; padding: 10px"><%= flash[:error] %></div>
+    <% end %>
+    <% if flash[:success] %>
+        <div style="background-color: lime; border: solid limegreen 2px; padding: 10px"><%= flash[:success] %></div>
     <% end %>
     <%= yield %>
   </div>

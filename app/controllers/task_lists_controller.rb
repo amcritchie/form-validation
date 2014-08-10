@@ -5,28 +5,41 @@ class TaskListsController < ApplicationController
   end
 
   def new
-    @new_task = TaskList.new
+    @task_list = TaskList.new
   end
 
   def create
 
-    @new_task = TaskList.new
-    @new_task.name = params[:task_list][:name]
+    @task_list = TaskList.new
+    @task_list.name = params[:task_list][:name]
 
-    if @new_task.valid?
-      if @new_task.save
-        flash[:notice] = "Task List was created"
+    if @task_list.valid?
+      if @task_list.save
+        flash[:success] = "Task List was created."
         redirect_to "/"
       else
-        @new_task
+        @task_list
         render :new
       end
     else
-      flash[:notice] = "Your task list could not be created."
+      flash[:error] = "Your tasks list could not be created."
       render :new
     end
+  end
 
+  def edit
+    @task_list = TaskList.find(params[:id])
+  end
 
+  def update
+    @task_list = TaskList.find(params[:id])
+    @task_list.name = params[:task_list][:name]
+    if @task_list.save
+      flash[:success] = "Task List was updated successfully!"
+      redirect_to "/"
+    else
+      render :edit
+    end
   end
 
 end

@@ -1,0 +1,22 @@
+<h1>Add Task</h1>
+<%= form_for [@task_list, @task] do |f| %>
+
+    <div>
+      < %=f.hidden_field :task_list_id%>
+    </div>
+
+    <p>
+      <%= f.label :description %><br>
+      <%= f.text_field :description %>
+    </p>
+
+    <p>
+      <%= f.label :due_date%>
+      <%= select_date Date.today, prefix: :due_date%>
+    </p>
+
+    <%= f.submit "Create Task" %>
+
+
+<% end %>
+
