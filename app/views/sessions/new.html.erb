@@ -14,7 +14,10 @@
   </div>
   <div>
     <%= f.submit "Login" %>
-    <a href="/about">about</a>
+    <a id="about-link" href="/about">about</a>
+    <%= link_to "Blah", "/about", class:"test_class" %>
+    <%= link_to "ID", "/about", id:'test_id' %>
+
   </div>
 
 <% end %>
