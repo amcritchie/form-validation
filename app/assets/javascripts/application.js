@@ -2,6 +2,24 @@
 //= require jquery_ujs
 //= require_tree .
 
+$(document).on('ready', function () {
+
+    var taskLists = $('.task-list');
+
+    console.log(taskLists.length);
+
+    taskLists.click(function(){
+        console.log("click");
+    })
+    taskLists.on('mouseover', function () {
+        console.log('hover');
+        $(this).addClass("makeyellow");
+        $(this).toggleClass("makeyellow");
+    })
+
+});
+
+
 //$(document).ready(function () {
 //        $('#about-link').on('click', function() {
 //                alert('hello')
@@ -30,3 +48,5 @@
 //
 //$('#about-link').remove()
 //
+s
+console.log('hello');

@@ -16,7 +16,7 @@ class TasksController < ApplicationController
     @task.due_date = Date.new(params[:due_date][:year].to_i, params[:due_date][:month].to_i, params[:due_date][:day].to_i)
     @task.task_list_id = params[:task_list_id]
     if @task.save
-      flash[:success] = "Task was created."
+      flash[:success] = "Task was created successfully!"
       redirect_to "/"
     else
       flash[:error] = "Your task could not be created."
@@ -24,3 +24,4 @@ class TasksController < ApplicationController
     end
   end
 end
+

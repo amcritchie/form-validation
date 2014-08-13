@@ -25,5 +25,15 @@ feature 'Tasks.' do
     click_button "Create Task"
 
     expect(page).to have_content("Prueba de rspec.")
+    expect(page).to have_content("Task was created successfully!")
+  end
+
+  scenario 'Blank task error.' do
+    visit "/"
+    click_link "Add Task"
+    fill_in "Task", with: ""
+    click_button "Create Task"
+
+    expect(page).to have_content("Your task could not be created")
   end
 end

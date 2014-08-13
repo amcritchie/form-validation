@@ -19,7 +19,6 @@ class TaskListsController < ApplicationController
         flash[:success] = "Task List was created."
         redirect_to "/"
       else
-        @task_list
         render :new
       end
     else
