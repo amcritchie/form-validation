@@ -20,6 +20,7 @@ class TasksController < ApplicationController
       redirect_to "/"
     else
       flash[:error] = "Your task could not be created."
+      @task_list = TaskList.find(params[:task_list_id])
       render :new
     end
   end

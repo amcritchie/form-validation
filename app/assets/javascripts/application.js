@@ -4,18 +4,59 @@
 
 $(document).on('ready', function () {
 
-    var taskLists = $('.task-list');
+    var submitButton = $('form .submitButton');
 
-    console.log(taskLists.length);
+//    submitButton.attr('disabled', true);
 
-    taskLists.click(function(){
-        console.log("click");
-    })
-    taskLists.on('mouseover', function () {
+
+    var inputs = $('form input');
+    var blankFields = 0;
+
+    submitButton.on('mouseover', function () {
         console.log('hover');
-        $(this).addClass("makeyellow");
-        $(this).toggleClass("makeyellow");
-    })
+//        $(this).addClass("makeyellow");
+//        $(this).toggleClass("makeyellow");
+    });
+
+    if (inputs.length > 0) {
+        inputs.each(function () {
+            if ($(this).val() == "") {
+                blankFields += 1;
+            }
+        });
+    }
+
+
+//    fields.each(function () {
+//        if ($(this).val() == "") {
+//            blankFields += 1;
+//        }
+//        console.log(this.value);
+//        console.log(blankFields);9
+//    });
+
+//    if (blankFields == 0) {
+//        console.log("ddd");
+//    }
+//
+//
+//    console.log(fields.length);
+//
+//    console.log(submitButton.length);
+//
+
+//    var taskLists = $('.task-list');
+//
+//    console.log(taskLists.length);
+//
+//    taskLists.click(function(){
+//        console.log("click");
+//    })
+//    taskLists.on('mouseover', function () {
+//        console.log('hover');
+//        $(this).addClass("makeyellow");
+//        $(this).toggleClass("makeyellow");
+//    })
 
 });
 
@@ -48,5 +89,5 @@ $(document).on('ready', function () {
 //
 //$('#about-link').remove()
 //
-s
+
 console.log('hello');
